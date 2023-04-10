@@ -1,7 +1,6 @@
 import React from "react";
-import {
-    MapPinIcon,CurrencyDollarIcon
-  } from "@heroicons/react/24/solid";
+import { MapPinIcon, CurrencyDollarIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const FeaturedJobs = ({ job }) => {
   const {
@@ -28,10 +27,14 @@ const FeaturedJobs = ({ job }) => {
         </div>
       </div>
       <div className="flex gap-12">
-        <MapPinIcon className="w-6 h-6" /><div className="-mx-10">{company_location}</div>
-        <CurrencyDollarIcon className="w-6 h-6"/> <div className="-mx-8 mb-4">{job_salary}</div>
+        <MapPinIcon className="w-6 h-6" />
+        <div className="-mx-10">{company_location}</div>
+        <CurrencyDollarIcon className="w-6 h-6" />{" "}
+        <div className="-mx-8 mb-4">Salary: {job_salary}</div>
       </div>
-      <button className="btn-primary">View Details</button>
+      <Link to={`../job/${id}`}>
+        <button className="btn-primary">View Details</button>
+      </Link>
     </div>
   );
 };
