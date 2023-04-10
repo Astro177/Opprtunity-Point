@@ -15,7 +15,7 @@ const FeaturedJobs = ({ job }) => {
     job_salary,
   } = job;
   return (
-    <div className="mb-16">
+    <div className="mb-16 border border-slate-200 p-8">
       <img src={image} alt="" className="w-24 h-12 mb-4" />
       <p className="font-semibold text-lg mb-2">{job_title}</p>
       <p className="mb-4">{company_name}</p>
