@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from './assets/components/Header';
 
 const App = () => {
   return (
-    <div>
-      <h1>Main page</h1>
-    </div>
+    <>
+      <Header/>
+    </>
   );
 };
 
