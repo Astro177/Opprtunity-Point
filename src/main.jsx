@@ -7,18 +7,21 @@ import Home from "./assets/components/Home";
 import AppliedJobs from "./assets/components/AppliedJobs";
 import Blogs from "./assets/components/Blogs";
 import Statistics from "./assets/components/Statistics";
+import ErrorPage from "./assets/components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<ErrorPage/>,
     children: [
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("/public/data.json"),
       },
       { path: "/statistics", element: <Statistics /> },
-      { path: "/appliedjobs", element: <AppliedJobs /> },
+      { path: "/applied", element: <AppliedJobs /> },
       { path: "/blog", element: <Blogs /> },
     ],
   },
