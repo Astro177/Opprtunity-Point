@@ -46,9 +46,11 @@ const Home = () => {
         </div>
       </div>
       <div className="mb-12 text-center">
-        <button className="btn-primary" onClick={() => handleSeeMore()}>
+        {
+          !seeMore && (<button className="btn-primary" onClick={() => handleSeeMore()}>
           See More
-        </button>
+        </button>)
+        }
       </div>
     </div>
   );

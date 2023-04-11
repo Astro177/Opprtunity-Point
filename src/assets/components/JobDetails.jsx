@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import {
   CurrencyDollarIcon,
   CalendarDaysIcon,
@@ -7,6 +7,7 @@ import {
   InboxIcon,
   MapPinIcon,
 } from "@heroicons/react/24/solid";
+import { addToDb } from "../utilities/fakeDB";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -19,6 +20,11 @@ const JobDetails = () => {
   if (!selectedJob) {
     return <div>Not found</div>;
   }
+  const handleApplyNow = (product) => {
+    addToDb(product.id)
+  };
+
+
   return (
     <div>
       <div className="font-bold text-5xl h-40 bg-slate-100 flex justify-center items-center">
@@ -93,7 +99,9 @@ const JobDetails = () => {
               </div>
             </div>
           </div>
-          <button className="btn-primary mt-4">Apply Now</button>
+          <Link to={'/applied'}><button className="btn-primary mt-4" onClick={() => handleApplyNow(id)}>
+            Apply Now
+          </button></Link>
         </div>
       </div>
     </div>
