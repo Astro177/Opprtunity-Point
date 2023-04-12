@@ -39,7 +39,7 @@ const Home = () => {
         </p>
       </div>
       <div className="my-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 mx-48">
+        <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center mx-auto">
           {jobs?.slice(0, seeMore ? 8 : 4).map((job) => (
             <FeaturedJobs key={job.id} job={job} />
           ))}
