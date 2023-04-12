@@ -8,6 +8,8 @@
 * You can see all the company's you've applied to
 * This website is fully SPA provide for best user experience
 
+* Live Link: https://exquisite-baklava-16bf3e.netlify.app/
+
 *************
 ENJOY YOUR TOUR AT OUR WEBSITE
 *************
