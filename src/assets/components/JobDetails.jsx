@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams,useNavigation } from "react-router-dom";
 import {
   CurrencyDollarIcon,
   CalendarDaysIcon,
@@ -8,6 +8,7 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/solid";
 import { addToDb } from "../utilities/fakeDB";
+import LoadingSpinner from "./LoadingSpinner";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -20,8 +21,12 @@ const JobDetails = () => {
   if (!selectedJob) {
     return <div>Not found</div>;
   }
-  const handleApplyNow = (product) => {
-    addToDb(product.id)
+  const navigation =useNavigation()
+  if(navigation.state==='loading'){
+    return <LoadingSpinner/>
+  }
+  const handleApplyNow = (id) => {
+    addToDb(id)
   };
 
 

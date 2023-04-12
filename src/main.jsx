@@ -9,6 +9,7 @@ import Blogs from "./assets/components/Blogs";
 import Statistics from "./assets/components/Statistics";
 import ErrorPage from "./assets/components/ErrorPage";
 import JobDetails from "./assets/components/JobDetails";
+import LoadingSpinner from "./assets/components/LoadingSpinner";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
         loader: () => fetch(`/public/data.json`),
       },
       { path: "/blog", element: <Blogs /> },
+      {path:'loader',element:<LoadingSpinner/>},
     ],
   },
 ]);
